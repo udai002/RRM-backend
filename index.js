@@ -3,6 +3,7 @@ const { default: mongoose } = require('mongoose')
 const dotenv = require('dotenv').config() 
 const userRoute = require('./Router/user')
 const dairyRoutes = require('./Router/dairyRoutes')
+const cors = require('cors')
 // const mongoose = require('mongoose')
 const Port = dotenv.parsed.PORT || 3000
 app = express()
@@ -21,6 +22,7 @@ const connectMongo = async ()=>{
 connectMongo()
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/' , (req , res)=>{
     res.send({message:"Welcome to express app"})
