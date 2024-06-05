@@ -8,7 +8,8 @@ const dairySchema = mongoose.Schema({
     fat:{type:Number , default:0},
     value:{type:Number , default:0.0},
     isPaid:{type:Boolean , default:false},
-    date:{type:Date , default:Date.now()}
+    date:{type:Date , default:Date.now()},
+    action:{type:String , default:"Buy"}
     })
 
 module.exports = mongoose.model('Dairy' , dairySchema)
